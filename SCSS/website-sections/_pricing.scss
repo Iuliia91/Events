@@ -1,0 +1,141 @@
+@use "../general-styles/colors" as clrs;
+@use "../general-styles/padding" as pad;
+@use "../general-styles/typography" as type;
+
+
+.pricing{
+
+    background-image: linear-gradient(45deg, hsla(253deg, 82%, 42%, 0.9), hsla(327deg, 97%, 48%, 0.7)),url('../images/pricing/pricing-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    &>h6,
+    &>h2,
+    &>p{
+        color: clrs.color-type("1");
+    }
+
+    h6::after,
+    h6::before{
+        background-color: clrs.color-theme("4");
+    }
+    &__cards{
+       
+      
+        &-card{
+            text-align: center;
+            background-color:clrs.color-type('1') ;
+            padding: pad.padding-st-v(xl) pad.padding-st-h('1');
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            transition: all 0.25s ease-in-out;
+
+            &:hover{
+                transform: translateY(-1rem);
+            }
+
+            &>h5{
+                padding: pad.padding-st-v(s) pad.padding-st-h(s);
+                font-size: type.font-size-st(sc);
+                border-radius: 5rem;
+                align-self: center;
+             
+            }
+             &>h4{
+                font-size: type.font-size-st(lc);
+            }
+
+
+            & button{
+                position: relative;
+                color: white;
+                border: none;
+                background-color: transparent;
+                align-self: center;
+                border-radius: 0.5rem;
+                transition: all 0.25s ease-in-out;
+                margin-bottom: 2rem;
+                padding: 1rem 3rem;
+
+                &::after,
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 2rem;
+                    height: 2rem;
+                    top: 50%;
+                    border-radius: 50%;
+                    background-color: white;
+                   
+                }
+
+              
+
+                &::before{
+                    left: 0;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                &::after{
+                    right: 0;
+                    transform: translateX(50%) translateY(-50%);
+                }
+             
+            }
+
+            &:nth-child(2){
+                &>h5{
+                  border: 2px solid clrs.color-link('2');
+                  color: clrs.color-link('2');  
+                }
+
+                & button{
+                    background-color:clrs.color-link('2');
+
+                    &:hover{
+                        background-color:clrs.color-link('3');
+                    }
+                }
+                
+            }
+
+
+            &:first-child,
+            &:last-child{
+                &>h5{
+                border: 2px solid clrs.color-link('3');
+                color: clrs.color-link('3');
+                  }
+                  & button{
+                    background-color:clrs.color-link('3');
+
+                    &:hover{
+                        background-color:clrs.color-link('2');  
+                    }
+                  }
+
+           
+                  }
+
+                 
+            
+                  }
+
+              & ul{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 1rem;
+
+                li{
+                    font-size: calc(type.font-size-st(sc) - 0.2rem);
+                    color: rgba(clrs.color-type("2"), 0.7);
+                }
+              }    
+ 
+ 
+
+    }
+}

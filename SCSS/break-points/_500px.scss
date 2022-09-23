@@ -1,0 +1,29 @@
+@media screen and (max-width:500px){
+
+    .events{
+        &__event{
+            &--adress{
+                
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+
+                p:first-child{
+                    margin-bottom: 2rem;
+                }
+
+            p:last-child{
+                flex-direction: column;
+                gap: 2rem;
+            }
+            }
+        }
+    }
+
+    .footer{
+
+        &>div{
+            flex-basis: 100%;
+        }
+    }
+}

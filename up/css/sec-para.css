@@ -1,0 +1,13 @@
+:root {
+  font-size: 62.5%;
+}
+
+.sec-para {
+  font-size: 1.5rem;
+  color: hsl(238deg, 50%, 13%);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.sec-para span {
+  display: block;
+}/*# sourceMappingURL=sec-para.css.map */

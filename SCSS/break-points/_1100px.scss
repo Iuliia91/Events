@@ -1,0 +1,39 @@
+@use '../general-styles/typography' as type;
+
+@media screen and (max-width:1100px){
+    .header ul{
+        flex-basis: 100%;
+        order:3;
+    }
+
+    .header__hero{
+        gap: 2rem;
+
+        & h1{
+            font-size: type.font-size-st(lc);
+        }
+    }
+
+
+    .events__event{
+          grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,min-content);
+      gap: 0.5rem;
+        
+
+        &--day{
+            justify-self: center;
+        }
+
+        &--adress{
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            justify-self: start;
+        }
+        & a{
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            justify-self: end;
+        }
+    }
+}

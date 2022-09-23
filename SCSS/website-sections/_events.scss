@@ -1,0 +1,130 @@
+@use "../general-styles/colors" as clrs;
+@use "../general-styles/padding" as pad;
+@use "../general-styles/typography" as type;
+
+.events{
+    background-color: hsl(216deg, 33%, 97%);
+
+    &__shedule{
+        grid-template-columns: repeat(auto-fit,minmax(15rem,1fr));
+    gap: 0.5rem;
+    align-content: center;
+    text-align: center;
+
+       &--day{
+        cursor: pointer;
+        padding: 3rem 3rem;
+        background-color: clrs.color-type('1');
+        border-radius: 0.5rem;
+        border-bottom: 4px solid transparent;
+
+        &:hover:not(&.current) {
+            border-bottom: 4px solid clrs.color-theme("2");
+          }
+    
+          &:not(&.current) {
+            cursor: pointer;
+          }
+
+          &.current {
+            background-color: clrs.color-theme("3");
+    
+            p {
+              color: clrs.color-type("1");
+            }
+          }
+
+       }
+
+       
+    }
+
+
+
+
+    &__event{
+        background-color: clrs.color-type('1');
+        border-radius: 0.5rem;
+        padding:2rem;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 2rem;
+
+        border-left: 3px solid transparent;
+        
+       &--day{
+        justify-self: start;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &>p{
+            font-size: 4rem;
+            font-weight: 900;
+        }
+
+        &>div{
+            display: flex;
+            flex-direction: column;
+           
+        }
+     
+       }
+
+        &--adress{
+          justify-self: center;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+           &>figure{
+                height: 8rem;
+                width: 8rem;
+
+                img{
+                    border-radius: 50%;
+                }
+            }
+
+            &>div{
+
+                p:first-child{
+                   text-transform: capitalize;
+                }
+
+                p:last-child{
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+
+                    i{
+                        color: hsl(327deg, 97%, 48%);
+                        font-size: 1.5rem;
+                    }
+                    }
+                }
+            }
+
+            &:hover{
+                border-left: 3px solid clrs.color-theme("2");
+            }
+
+             & a{
+            justify-self: end;
+            align-self: center;
+            background-color: clrs.color-link('3');
+        }
+        }
+
+       & a{
+        margin-top: 4rem;
+        background-color: clrs.color-theme("2");
+        &:hover {
+            background-color: clrs.color-theme("3");
+          }
+       }
+    }
+
+
+
+

@@ -1,0 +1,19 @@
+
+
+.gallery{
+
+    &__container{
+      
+        figure{
+            overflow: hidden;
+             img{
+                transition: all 0.25s ease-in-out;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+           
+  
+    }
+}
